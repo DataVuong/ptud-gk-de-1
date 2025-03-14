@@ -15,9 +15,9 @@ Trường: Đại học Công Nghiệp TP.HCM
 
 Đây là một ứng dụng Blog cá nhân được xây dựng bằng Flask, hỗ trợ hai loại người dùng:
 
-Admin: Quản lý user, xóa bình luận, theo dõi bài viết, bình luận.
+Admin: Quản lý user(Xem số lượng, xóa user, ở bên trái của chữ "Đăng Xuất" di chuột vào sẽ hiện), xóa bình luận, theo dõi bài viết, bình luận.
 
-User: Đăng ký, đăng nhập, bình luận bài viết, theo dõi bài viết.
+User: Đăng ký, đăng nhập, bình luận bài viết, theo dõi bài viết, post bài viết
 
 🔹 Chức năng chính của Blog
 
