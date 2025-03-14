@@ -43,6 +43,13 @@ class LoginForm(FlaskForm):
     password = PasswordField("Mật khẩu", validators=[InputRequired()])
     submit = SubmitField("Đăng nhập")
 
+# Form đăng bài viết
+class PostForm(FlaskForm):
+    title = StringField("Tiêu đề", validators=[InputRequired(), Length(min=3, max=100)])
+    content = StringField("Nội dung", validators=[InputRequired(), Length(min=10)])
+    submit = SubmitField("Đăng bài")
+
+
 # Danh sách bài viết với bình luận
 posts = [
     {"id": 1, "title": "Cách Học Lập Trình Hiệu Quả", "image": "https://picsum.photos/600/400?random=1",
@@ -124,12 +131,44 @@ def delete_comment(post_id, comment_index):
             del post["comments"][comment_index]
     return redirect(url_for("post_detail", post_id=post_id))
 
-@app.route("/admin")
+@app.route("/admin", methods=["GET"])
 @login_required
 def admin():
     if current_user.role != "admin":
         return "Truy cập bị từ chối!", 403
     return render_template("admin.html", users=users)
+
+@app.route("/delete_user/<username>")
+@login_required
+def delete_user(username):
+    if current_user.role != "admin":
+        return "Truy cập bị từ chối!", 403
+    if username in users and username != "admin":
+        del users[username]
+        flash(f"Người dùng {username} đã bị xóa!", "success")
+    else:
+        flash("Không thể xóa tài khoản admin hoặc người dùng không tồn tại.", "danger")
+    return redirect(url_for("admin"))
+
+@app.route("/create_post", methods=["GET", "POST"])
+@login_required
+def create_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        new_post = {
+            "id": len(posts) + 1,
+            "title": form.title.data,
+            "image": f"https://picsum.photos/600/400?random={len(posts) + 1}",
+            "content": form.content.data,
+            "followers": 0,
+            "comments": []
+        }
+        posts.append(new_post)
+        flash("Bài viết đã được đăng!", "success")
+        return redirect(url_for("home"))
+    return render_template("create_post.html", form=form)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

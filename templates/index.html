@@ -36,6 +36,11 @@
                             <a class="nav-link btn btn-success text-light" href="{{ url_for('register') }}">Đăng ký</a>
                         </li>
                     {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                          <a class="nav-link btn btn-info text-light mx-2" href="{{ url_for('create_post') }}">Đăng bài</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
