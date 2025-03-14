@@ -37,7 +37,7 @@
 ### **💻 Cài đặt và chạy ứng dụng**
 1. **Clone project từ GitHub**
    mở cmd: di chuyển tới thư mục bạn muốn lưu project sau đó ghi dòng code dưới đây: 
-   https://github.com/DataVuong/ptud-gk-de-1.git
+    git clone https://github.com/DataVuong/ptud-gk-de-1.git
 
    sau đó sẽ xuất hiện thư mục bạn clone, vào thư mục đó,
    sau đó vào phần app.py để chạy project
