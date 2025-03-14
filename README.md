@@ -22,8 +22,10 @@
 ✅ Theo dõi bài viết (lượt follow tăng khi người dùng click)  
 ✅ Giao diện đẹp với **Bootstrap 5**  
 ✅ Có thể xem chi tiết của bài viết
+
 ✅ có 1 tài khoản mặc định: 
-       admin	admin123	Admin
+
+       admin	admin123
 
 ---
 
