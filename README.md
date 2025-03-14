@@ -55,10 +55,10 @@ Flask, Flask-Login, Flask-WTF, Werkzeug
 
 Mở Command Prompt (cmd) / PowerShell / Terminal và chạy lệnh sau:
 
-Bước 2: git clone https://github.com/DataVuong/ptud-gk-de-1.git
+ git clone https://github.com/DataVuong/ptud-gk-de-1.git
 
-Bước 3 : cd ptud-gk-de-1 
+Bước 2: Tiếp tục chạy lệnh sau: cd ptud-gk-de-1 
 
-Bước 4: mở terminal và chạy lệnh sau: .\setup.bat
+Bước 3:  Chạy lệnh sau: .\setup.bat
 
 Khi chạy thành công, bạn sẽ thấy dòng tương tự như : http://127.0.0.1:5000/ ===> copy địa chỉ và mở trình duyệt để truy cập!!
