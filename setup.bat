@@ -1,5 +1,5 @@
 @echo off
-echo Đang thiet lap moi truong ao...
+echo Dang thiet lap moi truong ao...
 python -m venv venv
 call venv\Scripts\activate
 
